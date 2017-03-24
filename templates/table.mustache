@@ -1,0 +1,32 @@
+<table id="studentgrades" class="generaltable flexible boxaligncenter">
+    <thead>
+        <tr style="vertical-align: bottom">
+            {{#heading}}
+            <th scope="col {{class}}">
+                {{#sortasc}}
+                    <a href="{{{sortasc}}}" title="sort {{key}} asc">{{name}}</a>
+                {{/sortasc}}
+                {{#sortdesc}}
+                    <a href="{{{sortdesc}}}" title="sort {{key}} desc">{{name}} {{{iconsort}}}</a>
+                {{/sortdesc}}
+                {{#nosort}}
+                    {{name}}
+                {{/nosort}}
+            </th>
+            {{/heading}}
+        </tr>
+    </thead>
+    <tbody>
+        {{#myusers}}
+            <tr>
+                {{#values}}
+                    <td class="courseinfocell {{class}}">
+                        {{#link}}<a href="{{{link}}}">{{/link}}
+                            {{{value}}}
+                        {{#link}}</a>{{/link}}
+                    </td>
+                {{/values}}
+            </tr>
+        {{/myusers}}
+    </tbody>
+</table>
