@@ -15,17 +15,17 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * The report studentgrades user report default page
+ * The report quizcijfers user report default page
  *
- * @package    report_studentgrades 
+ * @package    report_quizcijfers 
  * @copyright  2017 Sonsbeekmedia, bas@sonsbeekmedia.nl
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @author     Bas Brands
  */
 
 require_once '../../config.php';
-require_once $CFG->dirroot.'/report/studentgrades/lib.php';
-require_once $CFG->dirroot.'/report/studentgrades/studentgrades_report_class.php';
+require_once $CFG->dirroot.'/report/quizcijfers/lib.php';
+require_once $CFG->dirroot.'/report/quizcijfers/quizcijfers_report_class.php';
 require_once $CFG->libdir.'/gradelib.php';
 require_once $CFG->dirroot.'/grade/lib.php';
 require_once $CFG->dirroot.'/grade/querylib.php';
@@ -37,13 +37,13 @@ $context = context_course::instance($id);
 require_login($course);
 
 $PAGE->set_context($context);
-$PAGE->set_url('/report/studentgrades/studentgrades_report.php');
+$PAGE->set_url('/report/quizcijfers/quizcijfers_report.php');
 $PAGE->set_heading($SITE->fullname);
 $PAGE->set_pagelayout('report');
-$PAGE->set_title(get_string('pluginname', 'report_studentgrades'));
-$PAGE->navbar->add(get_string('pluginname', 'report_studentgrades'));
+$PAGE->set_title(get_string('pluginname', 'report_quizcijfers'));
+$PAGE->navbar->add(get_string('pluginname', 'report_quizcijfers'));
 
-$report = new grade_report_studentgrades($id, $context); 
+$report = new grade_report_quizcijfers($id, $context); 
 
 echo $OUTPUT->header();
 

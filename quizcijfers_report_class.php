@@ -1,5 +1,5 @@
 <?php
-// This file is part of the studentgrades grade report
+// This file is part of the quizcijfers grade report
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Definition of the grade_report_studentgrades class
+ * Definition of the grade_report_quizcijfers class
  *
- * @package    report_studentgrades 
+ * @package    report_quizcijfers 
  * @copyright  2017 Sonsbeekmedia, bas@sonsbeekmedia.nl
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @author     Bas Brands
@@ -32,7 +32,7 @@ require_once($CFG->libdir.'/tablelib.php');
  * @package report_user
  */
 
-class grade_report_studentgrades {
+class grade_report_quizcijfers {
 
     public $canviewhidden;
     private $user;
@@ -60,7 +60,7 @@ class grade_report_studentgrades {
         $this->coursegrades = array();
         $this->fill_table();
         usort($this->users, array($this, "cmp"));
-        $this->baseurl = new moodle_url('/report/studentgrades/index.php');
+        $this->baseurl = new moodle_url('/report/quizcijfers/index.php');
     }
 
     function mycourses() {
@@ -79,7 +79,7 @@ class grade_report_studentgrades {
                     continue;
                 }
                 $coursecontext = context_course::instance($course->id);
-                if (!has_capability('report/studentgrades:viewall', $coursecontext)) {
+                if (!has_capability('report/quizcijfers:viewall', $coursecontext)) {
                     continue;
                 }
                 $this->courses[] = $course;
@@ -168,7 +168,7 @@ class grade_report_studentgrades {
             }
             $data->myusers[] = $myuser;
         }
-        return $OUTPUT->render_from_template('report_studentgrades/table', $data);
+        return $OUTPUT->render_from_template('report_quizcijfers/table', $data);
     }
 
     /**
@@ -217,7 +217,7 @@ class grade_report_studentgrades {
             $badge->url = new moodle_url('/badges/badge.php', array('hash' => $badge->uniquehash));
             $template->badges[] = $badge;
         }
-        return $OUTPUT->render_from_template('report_studentgrades/badges', $template);
+        return $OUTPUT->render_from_template('report_quizcijfers/badges', $template);
 
     }
 }

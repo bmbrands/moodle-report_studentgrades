@@ -1,5 +1,5 @@
 <?php
-// This file is part of the studentgrades grade report
+// This file is part of the quizcijfers grade report
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * report_studentgrades renderer
+ * report_quizcijfers renderer
  *
- * @package    report_studentgrades 
+ * @package    report_quizcijfers 
  * @copyright  2017 Sonsbeekmedia, bas@sonsbeekmedia.nl
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @author     Bas Brands
@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-class report_studentgrades_renderer extends plugin_renderer_base {
+class report_quizcijfers_renderer extends plugin_renderer_base {
 
     public function zscore($zscore) {
 
