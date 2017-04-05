@@ -161,6 +161,7 @@ class grade_report_studentgrades {
                 if (isset($this->coursegrades[$course->id][$user->id])) {
                     $value->value = round($this->coursegrades[$course->id][$user->id]->grade);
                 } else {
+                    $value->link = false;
                     $value->value = '-';
                 }
                 $myuser->values[] = $value;

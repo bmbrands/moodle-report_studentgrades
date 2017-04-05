@@ -22,8 +22,8 @@
  * @author     Bas Brands
  */
 
-$string['studentgrades:viewall'] = 'View All student grades';
-$string['studentgrades:view'] = 'View My Grades';
-$string['nothingtodisplay'] = 'There is nothing to display';
-$string['pluginname'] = 'Quiz Grades';
-$string['modulename'] = 'Modulename';
+$string['studentgrades:viewall'] = 'Bekijk all Quiz cijfers';
+$string['studentgrades:view'] = 'Bekijk Quiz cijfers';
+$string['nothingtodisplay'] = 'Er zijn geen cijfers';
+$string['pluginname'] = 'Quiz Cijfers';
+$string['modulename'] = 'Activiteit';
